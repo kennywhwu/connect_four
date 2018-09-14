@@ -161,14 +161,12 @@ function handleClick(evt) {
     // switch players
     // TODO: switch currPlayer 1 <-> 2
     currPlayer = currPlayer === 1 ? 2 : 1;
+    // change color of hover (add new current player class)
+    for (let i = 0; i < hoverSet.length; i++) {
+      hoverSet[i].classList.toggle(`p${currPlayer}`);
+    }
+    showPlayerName();
   }
-
-  // change color of hover (add new current player class)
-  for (let i = 0; i < hoverSet.length; i++) {
-    hoverSet[i].classList.toggle(`p${currPlayer}`);
-  }
-  // Change player name
-  showPlayerName();
 }
 
 function showPlayerName() {
