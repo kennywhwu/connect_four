@@ -6,6 +6,15 @@ td {
   border: solid 1px black;
 }
 
+#column-top td {
+  border-style: none;
+  color: white;
+}
+
+#column-top td:hover {
+  color: black;
+}
+
 /* pieces are div within game table cells: draw as colored circles */
 
 .piece {
@@ -13,6 +22,27 @@ td {
   margin: 5px;
   width: 80%;
   height: 80%;
+  border-radius: 50%;
+}
+
+.p1 {
+  background-color: red;
+}
+
+.p2 {
+  background-color: blue;
+}
+
+.hidden {
+  visibility: hidden;
+}
+
+.p1-text {
+  color: red;
+}
+
+.p2-text {
+  color: blue;
 }
 
 /* TODO: make pieces red/blue,  depending on player 1/2 piece */
