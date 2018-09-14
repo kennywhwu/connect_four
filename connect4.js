@@ -146,21 +146,22 @@ function handleClick(evt) {
     return endGame(`The Game is a Tie!`);
   }
 
-  // check for win
-  if (checkForWin()) {
-    setTimeout(() => endGame(`Player ${currPlayer} won!`), 10);
-  }
-
+  // change color of hover (remove current player class)
   let hoverSet = document.getElementsByClassName('hover');
 
-  // change color of hover (remove current player class)
   for (let i = 0; i < hoverSet.length; i++) {
     hoverSet[i].classList.toggle(`p${currPlayer}`);
   }
 
-  // switch players
-  // TODO: switch currPlayer 1 <-> 2
-  currPlayer = currPlayer === 1 ? 2 : 1;
+  // check for win
+
+  if (checkForWin()) {
+    setTimeout(() => endGame(`Player ${currPlayer} won!`), 10);
+  } else {
+    // switch players
+    // TODO: switch currPlayer 1 <-> 2
+    currPlayer = currPlayer === 1 ? 2 : 1;
+  }
 
   // change color of hover (add new current player class)
   for (let i = 0; i < hoverSet.length; i++) {
